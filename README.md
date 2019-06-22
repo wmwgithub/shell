@@ -1,1 +1,1 @@
-# 一些简单的linux shell 脚本 基于ubuntu
+# 一些简单的Linux shell脚本
