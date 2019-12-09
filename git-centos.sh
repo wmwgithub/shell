@@ -13,10 +13,11 @@ tar -zvxf v${GIT_VERSION}.tar.gz
 # 安装 
 cd git-$GIT_VERSION
 make configure
-./configure --prefix=/opt/git
+# 指定安装目录 是/usr/local 不用额外配置环境变量
+./configure --prefix=/usr/local
 make
 make install
-echo "export PATH=$PATH:/opt/git/bin" >> /etc/profile
+# echo "export PATH=$PATH:/opt/git/bin" >> /etc/profile
 # 回到运行此代码的目录 删除下载的安装包
 cd $LocalPath
 rm -rf git-${GIT_VERSION} *.tar.gz*
