@@ -28,4 +28,5 @@ EOF
 sudo systemctl start docker
 sudo systemctl daemon-reload
 sudo systemctl restart docker
+sudo systemctl enable docker
 docker info 
