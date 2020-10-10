@@ -3,13 +3,13 @@
 sudo yum remove docker docker-common docker-selinux docker-engine
 # 安装一些必要的依赖
 sudo yum install -y yum-utils device-mapper-persistent-data lvm2
-# 阿里仓库
-sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
-#wget -O /etc/yum.repos.d/docker-ce.repo https://download.docker.com/linux/centos/docker-ce.repo
+# 下载docker repo文件
+wget -O /etc/yum.repos.d/docker-ce.repo https://download.docker.com/linux/centos/docker-ce.repo
 # 软件仓库地址换成清华
-#sudo sed -i 's+download.docker.com+mirrors.tuna.tsinghua.edu.cn/docker-ce+' /etc/yum.repos.d/docker-ce.repo
+sudo sed -i 's+download.docker.com+mirrors.tuna.tsinghua.edu.cn/docker-ce+' /etc/yum.repos.d/docker-ce.repo
 sudo yum makecache fast
 sudo yum -y install docker-ce
+# docker 配置
 DockerPath='/etc/docker'
 #直接检测指定路径是不是文件夹 不是就创建
 if [ -d $DockerPath ]
